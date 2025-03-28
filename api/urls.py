@@ -1,9 +1,11 @@
 from django.urls import path
-from .views import StatusListCreate, StatusDetail, TypeListCreate, TypeDetail, CategoryListCreate, CategoryDetail, \
-SubcategoryListCreate, SubcategoryDetail, RecordListCreate, RecordDetail
+from .views import getRoutes, StatusListCreate, StatusDetail, TypeListCreate, TypeDetail, \
+    CategoryListCreate, CategoryDetail, SubcategoryListCreate, SubcategoryDetail, RecordListCreate, RecordDetail
 
 
 urlpatterns = [
+    path('', getRoutes, name='routes'),
+
     path('statuses', StatusListCreate.as_view(), name='status-list-create'),
     path('statuses/<int:pk>', StatusDetail.as_view(), name='status-detail'),
     

@@ -5,25 +5,24 @@ from .models import Status, Type, Category, Subcategory, Record
 class StatusSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Status
-        fields = ['name']
+        fields = '__all__'
 
 class TypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Type
-        fields = ['name']
+        fields = '__all__'
 
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Category
-        fields = ['name']
+        fields = '__all__'
 
 class SubcategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Subcategory
-        fields = ['name']
+        fields = '__all__'
 
 class RecordSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Record
         fields = '__all__'
-        depth = 3
